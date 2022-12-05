@@ -30,7 +30,7 @@ a {
 }
 
 .section-header {
-	text-align: var(--section-header-aligntext);
+	text-align: var(--section-header-align);
 }
 
 .section-tagline {
