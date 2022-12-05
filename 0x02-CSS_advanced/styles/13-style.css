@@ -21,15 +21,15 @@ a:link {
 	text-decoration: none;
 }
 
-a:visited {
+:link:visited {
 	font-style: italic;
 }
 
-a:hover {
+:link:hover {
 	border-bottom: 1px solid;
 }
 
-a:active {
+:link:active {
 	background-color: var(--color-light-grey);
 }
 
