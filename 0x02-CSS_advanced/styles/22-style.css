@@ -94,6 +94,7 @@ a:link {
 	font-size: var(--font-size-xx-large);
 	font-weight: var(--font-weight-bold);
 	color: var(--section-title-color);
+	margin: var(--section-title-margin);
 }
 
 .section-tagline {
@@ -160,7 +161,7 @@ ul.row{
 
 
 .row::after {
-	content: none;
+	content: "";
 	display: table;
 	clear: both;
 }
@@ -205,7 +206,7 @@ ul.row{
 }
 
 .footer {
-	padding: var(--section-footer-padding);
+	padding: var(--footer-padding);
 }
 
 .footer-copyright {
