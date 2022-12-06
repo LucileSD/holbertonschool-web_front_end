@@ -81,7 +81,8 @@ a:active {
 }
 
 .button:hover {
-	transition-property: color var(--transition-duration), background-color var(--transition-duration);
+	transition-duration: var(--transition-duration);
+	transition-property: color, background-color;
 }
 
 .visually-hidden {
