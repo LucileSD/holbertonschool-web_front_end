@@ -3,11 +3,16 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+@mixin margin-div {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 body {
 	@include margin;
 }
 
 div {
-	margin-left: 15px;
-	margin-right: 15px;
+	@include margin-div;
 }
