@@ -1,0 +1,15 @@
+/*using varaibles*/
+$font-color: #3D3D3D;
+$background: #6D6D6D;
+body {
+	color: $font-color;
+	background-color: $background;
+}
+
+p {
+	color: $font-color;
+}
+
+h2 {
+	background-color: $background;
+}
