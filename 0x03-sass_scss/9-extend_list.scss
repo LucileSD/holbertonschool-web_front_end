@@ -8,11 +8,11 @@
 }
 
 .success {
-	@extend %font-size;
 	color: #00FF00;
+	@extend %font-size;
 }
 
 .warning {
-	@extend %font-size;
 	color: #FF0000;
+	@extend %font-size;
 }
