@@ -1,18 +1,14 @@
 /*sass file with extend*/
-%font-size {
-	font-size: 12px;
-}
-
 .info {
-	@extend %font-size;
+	font-size: 12px;
 }
 
 .success {
 	color: #00FF00;
-	@extend %font-size;
+	@extend .info;
 }
 
 .warning {
 	color: #FF0000;
-	@extend %font-size;
+	@extend .info;
 }
