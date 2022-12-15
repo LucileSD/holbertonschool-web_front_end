@@ -701,7 +701,7 @@
     padding-right: 3rem;
   }
 
-  .form-group:focus-within {
+  .form-group:focus {
     border: .1rem solid var(--color-grey);
     background-color: var(--color-light-grey);
   }
