@@ -1,10 +1,10 @@
 function changeMode (size, weight, transform, background, color) {
   return function () {
-    document.documentElement.style.fontSize = size;
-    document.documentElement.style.fontWeight = weight;
-    document.documentElement.style.textTransform = transform;
-    document.documentElement.style.backgroundColor = background;
-    document.documentElement.style.color = color;
+    document.body.style.fontSize = size;
+    document.body.style.fontWeight = weight;
+    document.body.style.textTransform = transform;
+    document.body.style.backgroundColor = background;
+    document.body.style.color = color;
   }
 }
 
@@ -19,22 +19,19 @@ function main () {
 
   const newButtonSpooky = document.createElement('button');
   newButtonSpooky.innerText = 'Spooky';
-  newButtonSpooky.setAttribute('id', 'spooky');
   document.body.appendChild(newButtonSpooky);
 
   const newButtonDark = document.createElement('button');
   newButtonDark.innerText = 'Dark mode';
-  newButtonDark.setAttribute('id', 'dark');
   document.body.appendChild(newButtonDark);
 
   const newButtonScream = document.createElement('button');
   newButtonScream.innerText = 'Scream mode';
-  newButtonScream.setAttribute('id', 'scream');
   document.body.appendChild(newButtonScream);
 
-  document.getElementById('spooky').onclick = spooky;
-  document.getElementById('dark').onclick = darkMode;
-  document.getElementById('scream').onclick = screamMode;
+  newButtonSpooky.onclick = spooky;
+  newButtonDark.onclick = darkMode;
+  newButtonScream.onclick = screamMode;
 }
 
 main();
