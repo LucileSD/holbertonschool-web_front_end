@@ -49,17 +49,18 @@
         }
 
         function queryWikipedia(search, offset = 0) {
+          displayLoading(true);
+
           const data = $.ajax({
             type: "GET",
             url: `https://en.wikipedia.org/w/api.php?format=json&action=query&list=search&srsearch=${search}&sroffset=${offset}&origin=*`,
             contentType: JSON,
             offset: offset,
-            beforeSend: (_) => {
-              displayLoading(true);
-            },
+            
           });
 
           data.done(function () {
+            displayLoading(false);
             const totalHits = data.responseJSON.query.searchinfo.totalhits;
             const results = data.responseJSON.query.search;
 
