@@ -34,7 +34,7 @@
       }
 
       function displayCart() {
-        if (localStorage != "") {
+        if (localStorage.length > 0) {
           const p = document.createElement("p");
           p.textContent = `You previously had ${localStorage.length} items in your cart`;
           document.body.append(p);
