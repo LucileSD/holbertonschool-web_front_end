@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <title>3-index</title>
+  </head>
+  <body>
+    <div id="form">
+      <h2>Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname">
+      <input type="text" id="email" placeholder="Email">
+      <button type="button" onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+  </div>
+
+    <script type="application/javascript">
+
+      function showForm() {
+        const message = document.getElementById("message");
+        if (message) {
+          message.remove();
+        }
+        document.getElementById("form").style.display = 'block';
+      }
+
+      function hideForm() {
+        document.getElementById("form").style.display = 'none';
+      }
+
+      function deleteCookiesAndShowForm() {
+        Cookies.remove("firstname");
+        Cookies.remove("email");
+        showForm();
+      }
+
+      function showWelcomeMessageOrForm() {
+        const firstname = Cookies.get('firstname');
+        const email = Cookies.get("email")
+        if (firstname && email) {
+          const title = document.createElement("h1");
+          title.setAttribute("id", "message");
+
+          const logout = document.createElement("a");
+          logout.textContent = '(logout)';
+          logout.style.fontWeight = "normal";
+          logout.style.fontStyle = "italic";
+          logout.style.marginLeft = "10px";
+          logout.addEventListener("click", deleteCookiesAndShowForm);
+
+          title.textContent =`Welcome ${firstname} ${logout}`;
+          title.append(logout);
+          document.body.append(title);
+        } else {
+          showForm();
+        }
+      }
+
+      function setCookiesAndShowWelcomeMessage() {
+        const firstname = document.getElementById("firstname").value;
+        const email = document.getElementById("email").value;
+
+        Cookies.set("firstname", firstname, { expires: 10 });
+        Cookies.set("email", email, { expires: 10 });
+
+        showWelcomeMessageOrForm();
+      }
+
+      showWelcomeMessageOrForm();
+    </script>
+  </body>
+</html>
